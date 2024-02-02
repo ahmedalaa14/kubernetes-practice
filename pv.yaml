@@ -1,0 +1,12 @@
+kind: PersistentVolume
+apiVersion: v1  
+metadata:
+  name: pv-storage
+spec:
+  capacity:
+    storage: 2Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/tmp/data"
