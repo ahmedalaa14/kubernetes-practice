@@ -3,4 +3,6 @@ kind: ConfigMap
 metadata:
   name: redis-configmap
 data:
-  redis.conf: ""
+  redis.conf: |
+     macmoemory 5mb
+     maxmemory-policy allkeys-lru
