@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vols-demo
+spec:
+  containers:
+  - name: ubuntu1
+    image: ubuntu
+    command:
+      - sleep
+      - "3600"
+    volumeMounts:
+    - name: vol
+      mountPath: /ubuntu1
+  - name: ubuntu2
+    image: ubuntu
+    command:
+      - sleep
+      - "3600"
+    volumeMounts:
+    - name: vol
+      mountPath: /ubuntu2    
+  volumes:
+  - name: vol
+    emptyDir: {}
